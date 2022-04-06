@@ -13,11 +13,13 @@ export function PersonTable() {
     }, []);
 
     return (
-        <div className={'Table-class'}>
-            <table>
-                <SortableTableHeader columns={columns} tableData={data} setTableData={setData} />
-                <TableBody tableData={data} />
-            </table>
-        </div>
+        <>
+            <div className={'Table-class'}>
+                <table>
+                    <SortableTableHeader columns={columns} tableData={data} setTableData={setData} />
+                    <TableBody tableData={data} />
+                </table>
+            </div>
+        </>
     );
 }
