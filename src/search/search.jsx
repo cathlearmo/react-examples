@@ -25,6 +25,7 @@ export function SearchQuery() {
         <div className="page-right">
             <div className="input-field">    
                 <input type="text" autoFocus 
+                    placeholder="Enter a search phrase..."
                     onChange={(event) => setSearchPhrase(event.target.value)}
                     onKeyDown={handleKeyDown}
                 />

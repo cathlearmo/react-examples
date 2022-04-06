@@ -3,13 +3,13 @@ import React, { useEffect, useState } from 'react';
 function SearchResults({results}) {
 
     return (
-        <>
+        <div className="search-results">
             {
                 results.map((result, ind) => <div key={ind}> 
                     <span title={result.description}>{result.title}</span>
                 </div>)
             }
-        </>
+        </div>
     );
 }
 
@@ -51,11 +51,11 @@ export function PaginateSearchResults({ itemsPerPage, results }) {
     return (
         <>
             <SearchResults results={paginatedResults} />
-            <span>
+            <div className="pagination-controls">
                 <button onClick={pageLeft}>{'<'}</button>
                 {currentPage}{' of '}{totalPages}
                 <button onClick={pageRight}>{'>'}</button>
-            </span>
+            </div>
         </>
     );
 }
