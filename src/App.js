@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Routes, Route, Link } from "react-router-dom";
 import { PersonTable } from './table/tableType.jsx';
+import { SearchQuery } from './search/search.jsx';
 import './App.css';
 
 function App() {
@@ -27,9 +28,7 @@ function App() {
               renders the first one that matches the current URL. */}
           <div>
             <Routes>
-              {/*<Route path="/custom">
-                <ToDo />
-              </Route>*/}
+              <Route path="/custom" element={<SearchQuery />}/>
               <Route path="/" element={<PersonTable />}/>
             </Routes>
           </div>

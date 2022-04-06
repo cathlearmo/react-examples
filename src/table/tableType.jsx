@@ -13,7 +13,7 @@ export function PersonTable() {
     }, []);
 
     return (
-        <div className="sortable-table">
+        <div className="page-right">
             <h2>Click on table headers to sort the data</h2>
             <p>Give the component any number of columns to sort</p>
             <div className={'Table-class'}>
