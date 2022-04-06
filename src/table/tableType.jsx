@@ -13,13 +13,15 @@ export function PersonTable() {
     }, []);
 
     return (
-        <>
+        <div className="sortable-table">
+            <h2>Click on table headers to sort the data</h2>
+            <p>Give the component any number of columns to sort</p>
             <div className={'Table-class'}>
                 <table>
                     <SortableTableHeader columns={columns} tableData={data} setTableData={setData} />
                     <TableBody tableData={data} />
                 </table>
             </div>
-        </>
+        </div>
     );
 }

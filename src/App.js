@@ -14,10 +14,10 @@ function App() {
             <div className="sidebar">
               <ul style={{ listStyleType: "none", padding: 0 }}>
                 <li>
-                  <Link to="/">Sortable Table</Link>
+                  <Link to="/" className="link">Sortable Table</Link>
                 </li>
                 <li>
-                  <Link to="/custom">Fetch demo</Link>
+                  <Link to="/custom" className="link">Fetch demo</Link>
                 </li>
               </ul>
             </div>
