@@ -69,3 +69,9 @@ img {
 .main-content {
   width: 100%;
 }
+
+.input-field {
+  input {
+    padding: 10px;
+  }
+}
