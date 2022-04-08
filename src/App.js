@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Routes, Route, Link } from "react-router-dom";
 import { PersonTable } from './table/tableType.jsx';
-import { SearchQuery } from './search/search.jsx';
+import { SearchPage } from './search/searchPage.jsx';
 import './App.css';
 
 function App() {
@@ -12,23 +12,21 @@ function App() {
       <div className="App">
         <div className="page-with-sidebar">
           <nav>
-            <div className="sidebar">
               <ul style={{ listStyleType: "none", padding: 0 }}>
-                <li>
-                  <Link to="/" className="link">Sortable Table</Link>
-                </li>
                 <li>
                   <Link to="/custom" className="link">Fetch demo</Link>
                 </li>
+                <li>
+                  <Link to="/" className="link">Sortable Table</Link>
+                </li>
               </ul>
-            </div>
           </nav>
 
-          {/* A <Switch> looks through its children <Route>s and
+          {/* <Routes> looks through its child <Route>s and
               renders the first one that matches the current URL. */}
-          <div>
+          <div className={"main-content"}>
             <Routes>
-              <Route path="/custom" element={<SearchQuery />}/>
+              <Route path="/custom" element={<SearchPage />}/>
               <Route path="/" element={<PersonTable />}/>
             </Routes>
           </div>

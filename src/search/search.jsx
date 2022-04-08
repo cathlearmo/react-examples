@@ -22,7 +22,7 @@ export function SearchQuery() {
     };
 
     return (
-        <div className="page-right">
+        <>
             <div className="input-field">    
                 <input type="text" autoFocus 
                     placeholder="Enter a search phrase..."
@@ -33,6 +33,6 @@ export function SearchQuery() {
             </div>
             {<PaginateSearchResults itemsPerPage={10} results={data}/>}
             
-        </div>
+        </>
     );
 }

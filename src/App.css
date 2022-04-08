@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -44,21 +45,27 @@ tr:nth-child(even) {
   display: flex;
 }
 
-.sidebar  {
+nav  {
   background: #000e34;
   height: 97vh;
   padding: 10px;
-  width: 100%;
+  width: 25%;
 }
 
 .link {
   color: #FFFDD0;
 }
 
-.page-right {
-  padding-left: 30px;
-}
-
 .search-results {
   padding: 10px 0 20px 0;
+}
+
+img {
+  height: 150px;
+  padding: 10px 0 10px 0;
+  width: 60%;
+}
+
+.main-content {
+  width: 100%;
 }
