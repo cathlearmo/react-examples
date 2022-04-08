@@ -9,10 +9,7 @@ export function SearchQuery() {
     const searchPhrase = useInput('');
     const [url, setUrl] = React.useState('https://help-search-api-prod.herokuapp.com/search?query=');
 
-    const { data } = useFetch(
-        url,
-        []
-    );
+    const { data } = useFetch(url, []);
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {

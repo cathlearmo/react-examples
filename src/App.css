@@ -12,6 +12,12 @@ table, th, td {
   border: 1px solid grey;
   text-align: left;
 }
+table {
+  background: white;
+  margin-left: 50px;
+  width: 90%
+}
+
 th, td {
   padding: 10px;
 }
@@ -46,14 +52,17 @@ tr:nth-child(even) {
 }
 
 nav  {
-  background: #000e34;
   height: 97vh;
   padding: 10px;
-  width: 25%;
+  width: 20%;
+}
+li {
+  margin-left: 10px;
+  text-align: left;
 }
 
-.link {
-  color: #FFFDD0;
+.link:hover {
+  color: blue;
 }
 
 .search-results {
@@ -67,6 +76,7 @@ img {
 }
 
 .main-content {
+  background-color: #F3F7FB;
   width: 100%;
 }
 
