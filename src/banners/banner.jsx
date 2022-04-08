@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './beach.jpg';
 
- //add alt text on the img to describe the image for screen readers - accessibility and for SEO improvement
+// React says Screen-readers already announce `img` tags as an image and so no alt tag is required for accessibility
+// however the web says to include the alt tag so I am leaving it in
  
 export function Banner() {
     return ( 

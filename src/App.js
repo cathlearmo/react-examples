@@ -6,7 +6,7 @@ import { PersonTable } from './table/tableType.jsx';
 import { SearchPage } from './search/searchPage.jsx';
 import './App.css';
 
-{/*use React Router for client-side page navigation*/}
+/*use React Router for client-side page navigation*/
 
 function App() {
   return (

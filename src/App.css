@@ -70,8 +70,10 @@ img {
   width: 100%;
 }
 
-.input-field {
-  input {
+.search-input, .search-button {
     padding: 10px;
-  }
+}
+
+.search-input {
+  width: 300px;
 }

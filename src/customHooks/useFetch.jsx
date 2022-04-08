@@ -6,8 +6,8 @@ export const useFetch = (url, initialValue) => {
 
     useEffect(() => {
         let mounted = true;
-        fetch(url).
-            then((data) => {
+        fetch(url)
+            .then((data) => {
                 if (!data.ok) {
                     throw Error(data.status);
                 } else {

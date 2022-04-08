@@ -27,9 +27,9 @@ export function SearchQuery() {
     return (
         <>
             <div className="input-field">   
-                <input placeholder="Enter a search phrase..." type="text"
+                <input className="search-input" placeholder="Enter a search phrase..." type="text"
                     onKeyDown={handleKeyDown} {...searchPhrase}/> 
-                <input type="button" value="Search" onClick={doSearch} />
+                <input className="search-button" type="button" value="Search" onClick={doSearch} />
             </div>
             {<PaginateSearchResults itemsPerPage={10} results={data}/>}
             
