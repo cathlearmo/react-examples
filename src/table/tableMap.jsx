@@ -36,7 +36,7 @@ export function TableBody({ tableData}) {
                     return (
                         <tr key={index}>
                         {
-                            Object.keys(item).map((key) => <td><label>{item[key]}</label></td>)
+                            Object.keys(item).map((key, ind) => <td key={ind}><label>{item[key]}</label></td>)
                         }
                         </tr>
                     )
