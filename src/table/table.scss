@@ -2,7 +2,6 @@
     margin-left: 10px;
     margin-top: 10px;
 
-
     thead {
         background-color: gainsboro;
     }
@@ -10,17 +9,14 @@
     table {
         border-collapse: collapse;
         border: 1px solid gainsboro;
+        background: white;
+        margin-left: 50px;
+        width: 90%;
     }
 
     tr { 
         border: solid gainsboro;
         border-width: 1px 0;
-    }
-    
-    table {
-        background: white;
-        margin-left: 50px;
-        width: 90%
     }
       
     th, td {
