@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const useInput = ({initialValue}) => {
+export const useInput = (initialValue) => {
     const [value, setValue] = React.useState(initialValue);
 
     const handleChange = (event) => {
