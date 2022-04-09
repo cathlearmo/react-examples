@@ -23,7 +23,7 @@ export function TableHeader({ tableData, setTableData, allData}) {
                 setSortValues(sortKeys);
             }
         }
-    }, [tableData]);
+    }, [tableData, sortValues]);
 
     const sortHeader = (item) => {
         const sortKey = sortValues[item];
