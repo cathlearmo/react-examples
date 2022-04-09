@@ -1,9 +1,9 @@
 import React from 'react';
-import { PaginateSearchResults } from './searchResults.jsx';
+import { PaginateSearchResults } from './paginateSearchResults.jsx';
 import { useFetch } from '../customHooks/useFetch.jsx';
 import { useInput } from "../customHooks/useInput.jsx";
 
-//use custom hooks to re-use functional state code, examples are useFetch and useInput
+//use custom hooks to re-use functional state code, examples are useFetch and useInput and usePagination
 
 export function SearchQuery() {
     const searchPhrase = useInput('');
@@ -28,7 +28,7 @@ export function SearchQuery() {
                     onKeyDown={handleKeyDown} {...searchPhrase}/> 
                 <input className="search-button" type="button" value="Search" onClick={doSearch} />
             </div>
-            {<PaginateSearchResults itemsPerPage={10} results={data}/>}
+            {<PaginateSearchResults data={data}/>}
             
         </>
     );
