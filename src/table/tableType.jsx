@@ -1,23 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Table } from './tableMap.jsx';
 import Pagination from '../pagination/pagination.jsx';
-import data from '../data/mockData.json';
+import inputData from '../data/mockData.json';
 import { PageSize } from "../pagination/paginationConstants.js";
 import { useCurrentPage } from "../customHooks/useCurrentPage.jsx";
+import { useData } from "../customHooks/useData.jsx";
 import './table.scss';
 
 export function PersonTable() {
-    const [tableData, setTableData] = useState([]);
-    const { currentPage, setCurrentPage, currentData } = useCurrentPage(tableData);
-
-    useEffect(() => {
-        setTableData(data);
-    }, []);
+    const { data, setData} = useData(inputData);
+    const { currentPage, setCurrentPage, currentData } = useCurrentPage(data);
 
     return (
         <div className="page-right">
             <p>This page uses the same pagination component as the fetch example page</p>
-            <Table className="table-class" tableData={currentData}/>
+            <p>Click on a table header to sort the data by the column value</p>
+            <Table 
+                className="table-class" 
+                tableData={currentData} 
+                setTableData={setData} 
+                allData={inputData}
+            />
             <Pagination
                 className="pagination-bar"
                 currentPage={currentPage}

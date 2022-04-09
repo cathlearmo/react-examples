@@ -10,7 +10,7 @@ export const useCurrentPage = (data, pageSize = PageSize) => {
         const firstPageIndex = (currentPage - 1) * pageSize;
         const lastPageIndex = firstPageIndex + pageSize;
         return data.slice(firstPageIndex, lastPageIndex);
-    }, [currentPage, data]);
+    }, [currentPage, data, pageSize]);
 
     return {
         currentPage,
