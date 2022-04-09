@@ -1,27 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { TableBody } from './tableBody.jsx';
-import { SortableTableHeader } from './sortableTableHeader.jsx';
-import { getTableItems, getColumns } from '../data/tableItems.js'
+import Pagination from '../pagination/pagination.jsx';
+import data from '../data/mockData.json';
+
+let PageSize = 10;
 
 export function PersonTable() {
-    const [data, setData] = useState([]);
-    const [columns, setColumns] = useState([]);
+    const [tableData, setTableData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const currentData = useMemo(() => {
+        const firstPageIndex = (currentPage - 1) * PageSize;
+        const lastPageIndex = firstPageIndex + PageSize;
+        return tableData.slice(firstPageIndex, lastPageIndex);
+    }, [currentPage, tableData]);
 
     useEffect(() => {
-        setData(getTableItems());
-        setColumns(getColumns());
+        setTableData(data);
     }, []);
+
 
     return (
         <div className="page-right">
-            <h2>Click on table headers to sort the data</h2>
-            <p>Give the component any number of columns to sort</p>
+            <p>This page uses the same pagination component as the fetch example page</p>
             <div className={'Table-class'}>
                 <table>
-                    <SortableTableHeader columns={columns} tableData={data} setTableData={setData} />
-                    <TableBody tableData={data} />
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <TableBody tableData={currentData} />
                 </table>
             </div>
+            <Pagination
+                className="pagination-bar"
+                currentPage={currentPage}
+                totalCount={data.length}
+                pageSize={PageSize}
+                onPageChange={page => setCurrentPage(page)}
+            />
         </div>
     );
 }

@@ -19,7 +19,7 @@ function App() {
                   <Link to="/custom" className="link">Fetch demo</Link>
                 </li>
                 <li>
-                  <Link to="/" className="link">Sortable Table</Link>
+                  <Link to="/" className="link">Table demo</Link>
                 </li>
               </ul>
           </nav>

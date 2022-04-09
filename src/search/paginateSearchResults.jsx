@@ -1,6 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import Pagination from '../pagination/pagination.jsx';
-//import './style.scss';
 
 let PageSize = 10;
 
