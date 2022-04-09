@@ -1,4 +1,5 @@
 //A simple dependency called classnames provides flexibility when handling multiple classNames conditionally.
+//This component uses the usePagination custom hook and can be re-used anywhere in the code base
 
 import React from 'react';
 import classnames from 'classnames';

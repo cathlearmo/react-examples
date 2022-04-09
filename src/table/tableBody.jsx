@@ -6,12 +6,14 @@ export function TableBody({ tableData}) {
         <tbody>
             {
                 tableData.map((item, index) => {
-                    const {name, subject, gender} = item;
+                    const {id, first_name, last_name, email, phone} = item;
 
                     return <tr key={index}>
-                        <td><label title={name}>{name}</label></td>
-                        <td><label title={subject}>{subject}</label></td>
-                        <td><label title={gender}>{gender}</label></td>
+                        <td><label title={id}>{id}</label></td>
+                        <td><label title={first_name}>{first_name}</label></td>
+                        <td><label title={last_name}>{last_name}</label></td>
+                        <td><label title={email}>{email}</label></td>
+                        <td><label title={phone}>{phone}</label></td>
                     </tr>;
                 })
             }
