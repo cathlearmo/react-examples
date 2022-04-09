@@ -2,8 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import Pagination from '../pagination/pagination.jsx';
 import { PageSize } from "../pagination/paginationConstants.js";
 
-
-export function PaginateSearchResults({data}) {
+export function SearchResults({data}) {
     const [currentPage, setCurrentPage] = useState(1);
 
     const currentData = useMemo(() => {
@@ -26,11 +25,11 @@ export function PaginateSearchResults({data}) {
                 }
             </div>
             <Pagination
-            className="pagination-bar"
-            currentPage={currentPage}
-            totalCount={data.length}
-            pageSize={PageSize}
-            onPageChange={page => setCurrentPage(page)}
+                className="pagination-bar"
+                currentPage={currentPage}
+                totalCount={data.length}
+                pageSize={PageSize}
+                onPageChange={page => setCurrentPage(page)}
             />
         </>
     );

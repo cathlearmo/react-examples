@@ -1,12 +1,12 @@
 import React from 'react';
-import { PaginateSearchResults } from './paginateSearchResults.jsx';
+import { SearchResults } from './searchResults.jsx';
 import { useFetch } from '../customHooks/useFetch.jsx';
 import { useInput } from "../customHooks/useInput.jsx";
 
 //use custom hooks to re-use functional state code, examples are useFetch and useInput and usePagination
 
 export function SearchQuery() {
-    const searchPhrase = useInput(' ');
+    const searchPhrase = useInput('');
     const [url, setUrl] = React.useState('https://help-search-api-prod.herokuapp.com/search?query=');
 
     const { data } = useFetch(url, []);
@@ -28,7 +28,7 @@ export function SearchQuery() {
                     onKeyDown={handleKeyDown} {...searchPhrase} /> 
                 <input className="search-button" type="button" value="Search" onClick={doSearch} />
             </div>
-            {<PaginateSearchResults data={data}/>}
+            {<SearchResults data={data}/>}
             
         </>
     );
