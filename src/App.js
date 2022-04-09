@@ -16,10 +16,10 @@ function App() {
           <nav>
               <ul style={{ listStyleType: "none", padding: 0 }}>
                 <li>
-                  <Link to="/custom" className="link">Fetch demo</Link>
+                  <Link to="/fetch" className="link">Fetch demo</Link>
                 </li>
                 <li>
-                  <Link to="/" className="link">Table demo</Link>
+                  <Link to="/table" className="link">Table demo</Link>
                 </li>
               </ul>
           </nav>
@@ -28,8 +28,8 @@ function App() {
               renders the first one that matches the current URL. */}
           <div className={"main-content"}>
             <Routes>
-              <Route path="/custom" element={<SearchPage />}/>
-              <Route path="/" element={<PersonTable />}/>
+              <Route path="/fetch" element={<SearchPage />}/>
+              <Route path="/table" element={<PersonTable />}/>
             </Routes>
           </div>
         </div>
