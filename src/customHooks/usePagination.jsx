@@ -1,6 +1,6 @@
 //this custom hook for pagination will need to update when the properties totalCount, pageSize, 
 //siblingCount or currentPage change
-//he useMemo callback will run when any value in its dependency array changes.
+//the useMemo callback will run when any value in its dependency array changes.
 
 import React from 'react';
 

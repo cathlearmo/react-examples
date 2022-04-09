@@ -24,7 +24,7 @@ export function SearchQuery() {
     return (
         <>
             <div className="input-field">   
-                <input className="search-input" placeholder="Enter a search phrase..." type="text"
+                <input className="search-input" placeholder="Enter a TV related search phrase..." type="text"
                     onKeyDown={handleKeyDown} {...searchPhrase}/> 
                 <input className="search-button" type="button" value="Search" onClick={doSearch} />
             </div>
