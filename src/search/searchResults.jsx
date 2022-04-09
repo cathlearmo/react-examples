@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Pagination from '../pagination/pagination.jsx';
 import { PageSize } from "../pagination/paginationConstants.js";
 import { useCurrentPage } from "../customHooks/useCurrentPage.jsx";
+import './search.scss';
 
 export function SearchResults({data}) {
     const { currentPage, setCurrentPage, currentData } = useCurrentPage(data);
@@ -13,11 +14,13 @@ export function SearchResults({data}) {
     return (
         <>
             <div className="search-results">
+                <ul>
                 {
-                    currentData.map((result, ind) => <div key={ind}> 
+                    currentData.map((result, ind) => <li key={ind}> 
                         <span title={result.description}>{result.title}</span>
-                    </div>)
+                    </li>)
                 }
+                </ul>
             </div>
             <Pagination
                 className="pagination-bar"
