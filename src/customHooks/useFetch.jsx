@@ -20,6 +20,7 @@ export const useFetch = (url, initialValue) => {
             }).catch((e) => {
                 setError(e);
             });
+        //this is here to avoid setting state when the component is not mounted
         return function cleanup() {
             mounted = false;
         };

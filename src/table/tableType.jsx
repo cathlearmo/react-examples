@@ -4,6 +4,7 @@ import Pagination from '../pagination/pagination.jsx';
 import data from '../data/mockData.json';
 import { PageSize } from "../pagination/paginationConstants.js";
 import { useCurrentPage } from "../customHooks/useCurrentPage.jsx";
+import './table.scss';
 
 export function PersonTable() {
     const [tableData, setTableData] = useState([]);
