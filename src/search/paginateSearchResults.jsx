@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Pagination from '../pagination/pagination.jsx';
 //import './style.scss';
 
@@ -12,6 +12,11 @@ export function PaginateSearchResults({data}) {
         const lastPageIndex = firstPageIndex + PageSize;
         return data.slice(firstPageIndex, lastPageIndex);
     }, [currentPage]);
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [data]);
+
 
     return (
         <>
