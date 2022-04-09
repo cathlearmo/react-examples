@@ -11,7 +11,7 @@ export function PaginateSearchResults({data}) {
         const firstPageIndex = (currentPage - 1) * PageSize;
         const lastPageIndex = firstPageIndex + PageSize;
         return data.slice(firstPageIndex, lastPageIndex);
-    }, [currentPage]);
+    }, [currentPage, data]);
 
     useEffect(() => {
         setCurrentPage(1);
