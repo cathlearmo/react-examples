@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { TableBody } from './tableBody.jsx';
+import { Table } from './tableMap.jsx';
 import Pagination from '../pagination/pagination.jsx';
 import data from '../data/mockData.json';
 
@@ -23,20 +23,7 @@ export function PersonTable() {
     return (
         <div className="page-right">
             <p>This page uses the same pagination component as the fetch example page</p>
-            <div className={'Table-class'}>
-                <table>
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>First name</th>
-                        <th>Last name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                    </tr>
-                </thead>
-                <TableBody tableData={currentData} />
-                </table>
-            </div>
+            <Table className="table-class" tableData={currentData}/>
             <Pagination
                 className="pagination-bar"
                 currentPage={currentPage}
