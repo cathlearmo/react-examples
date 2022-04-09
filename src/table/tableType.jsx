@@ -1,18 +1,13 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table } from './tableMap.jsx';
 import Pagination from '../pagination/pagination.jsx';
 import data from '../data/mockData.json';
 import { PageSize } from "../pagination/paginationConstants.js";
+import { useCurrentPage } from "../customHooks/useCurrentPage.jsx";
 
 export function PersonTable() {
     const [tableData, setTableData] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-
-    const currentData = useMemo(() => {
-        const firstPageIndex = (currentPage - 1) * PageSize;
-        const lastPageIndex = firstPageIndex + PageSize;
-        return tableData.slice(firstPageIndex, lastPageIndex);
-    }, [currentPage, tableData]);
+    const { currentPage, setCurrentPage, currentData } = useCurrentPage(tableData);
 
     useEffect(() => {
         setTableData(data);

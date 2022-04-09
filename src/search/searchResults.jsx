@@ -1,19 +1,14 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Pagination from '../pagination/pagination.jsx';
 import { PageSize } from "../pagination/paginationConstants.js";
+import { useCurrentPage } from "../customHooks/useCurrentPage.jsx";
 
 export function SearchResults({data}) {
-    const [currentPage, setCurrentPage] = useState(1);
-
-    const currentData = useMemo(() => {
-        const firstPageIndex = (currentPage - 1) * PageSize;
-        const lastPageIndex = firstPageIndex + PageSize;
-        return data.slice(firstPageIndex, lastPageIndex);
-    }, [currentPage, data]);
+    const { currentPage, setCurrentPage, currentData } = useCurrentPage(data);
 
     useEffect(() => {
         setCurrentPage(1);
-    }, [data]);
+    }, [data, setCurrentPage]);
 
     return (
         <>

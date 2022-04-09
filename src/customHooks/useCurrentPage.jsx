@@ -1,7 +1,7 @@
 import React from 'react';
 import { PageSize } from '../pagination/paginationConstants.js';
 
-export const useCurrentPage = () => {
+export const useCurrentPage = (data) => {
     const [currentPage, setCurrentPage] = React.useState(1);
 
     const currentData = React.useMemo(() => {

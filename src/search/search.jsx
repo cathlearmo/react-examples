@@ -3,7 +3,7 @@ import { SearchResults } from './searchResults.jsx';
 import { useFetch } from '../customHooks/useFetch.jsx';
 import { useInput } from "../customHooks/useInput.jsx";
 
-//use custom hooks to re-use functional state code, examples are useFetch and useInput and usePagination
+//use custom hooks to re-use functional state code, examples here are useFetch and useInput
 
 export function SearchQuery() {
     const searchPhrase = useInput('');
