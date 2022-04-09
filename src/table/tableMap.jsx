@@ -49,13 +49,13 @@ export function TableBody({ tableData}) {
 export function Table({className, tableData}) {
     return (
         <div className={className}>
-        <table>
-            <TableHeader tableData={tableData} />
-            <TableBody tableData={tableData} />
-        </table>
-    </div>
+            <table>
+                <TableHeader tableData={tableData} />
+                <TableBody tableData={tableData} />
+            </table>
+        </div>
     )
-}
+};
 
 
 

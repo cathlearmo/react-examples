@@ -39,6 +39,7 @@ nav  {
   padding: 10px;
   width: 20%;
 }
+
 li {
   margin-left: 10px;
   text-align: left;
@@ -46,10 +47,6 @@ li {
 
 .link:hover {
   color: #FF5F1F;
-}
-
-.search-results {
-  padding: 10px 0 20px 0;
 }
 
 img {
@@ -61,18 +58,4 @@ img {
 .main-content {
   background-color: #F3F7FB;
   width: 100%;
-}
-
-.search-input {
-    padding: 10px;
-    width: 300px;
-}
-.search-button {
-  background-color: #FF5F1F;
-  border: #FF5F1F;
-  color: white;
-  padding: 11px;
-}
-.search-button:hover {
-  background-color: black;
 }
