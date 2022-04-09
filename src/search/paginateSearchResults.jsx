@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import Pagination from '../pagination/pagination.jsx';
+import { PageSize } from "../pagination/paginationConstants.js";
 
-let PageSize = 10;
 
 export function PaginateSearchResults({data}) {
     const [currentPage, setCurrentPage] = useState(1);
@@ -15,7 +15,6 @@ export function PaginateSearchResults({data}) {
     useEffect(() => {
         setCurrentPage(1);
     }, [data]);
-
 
     return (
         <>

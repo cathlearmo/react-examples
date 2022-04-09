@@ -2,8 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Table } from './tableMap.jsx';
 import Pagination from '../pagination/pagination.jsx';
 import data from '../data/mockData.json';
-
-let PageSize = 10;
+import { PageSize } from "../pagination/paginationConstants.js";
 
 export function PersonTable() {
     const [tableData, setTableData] = useState([]);
@@ -18,7 +17,6 @@ export function PersonTable() {
     useEffect(() => {
         setTableData(data);
     }, []);
-
 
     return (
         <div className="page-right">
