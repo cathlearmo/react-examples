@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import Pagination from '../pagination/pagination.jsx';
-//import { PageSize } from "../pagination/paginationConstants.js";
 import { useCurrentPage } from "../customHooks/useCurrentPage.jsx";
 import './search.scss';
 
 export function SearchResults({data}) {
-    const pageSize = 6;
+    const pageSize = 5;
     const { currentPage, setCurrentPage, currentData } = useCurrentPage(data, pageSize);
 
     useEffect(() => {
