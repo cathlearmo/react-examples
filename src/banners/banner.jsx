@@ -1,10 +1,11 @@
 import React from 'react';
+import './banner.scss';
 
-// React says Screen-readers already announce `img` tags as an image and so no alt tag is required for accessibility
-// however the web says to include the alt tag so I am leaving it in
- 
-export function Banner({image, altText}) {
+export function Banner({text1, text2, className = "banner-header"}) {
     return ( 
-        <img src={image} alt={altText}/> 
+        <div className={className}>
+            <span>{text1}</span><br/>
+            {text2 && <span>{text2}</span>}
+        </div>
     )
 };

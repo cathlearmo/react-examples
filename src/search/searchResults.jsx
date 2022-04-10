@@ -4,7 +4,7 @@ import { useCurrentPage } from "../customHooks/useCurrentPage.jsx";
 import './search.scss';
 
 export function SearchResults({data}) {
-    const pageSize = 5;
+    const pageSize = 6;
     const { currentPage, setCurrentPage, currentData } = useCurrentPage(data, pageSize);
 
     useEffect(() => {
