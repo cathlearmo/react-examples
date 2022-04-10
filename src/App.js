@@ -5,7 +5,7 @@ import {
 import { PersonTable } from './table/tableType.jsx';
 import { SearchPage } from './search/searchPage.jsx';
 import { Banner } from './banners/banner.jsx';
-import './App.css';
+import './App.scss';
 
 const WelcomePage = () => {
   const textOne = "Welcome to my react demo web site.";
