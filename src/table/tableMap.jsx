@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import _ from 'underscore';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 //Can use the table header and body to map any number of th and td values
 
@@ -7,6 +9,7 @@ export function TableHeader({ tableData, setTableData, allData}) {
 
     const [headerData, setHeaderData] = useState({});
     const [sortValues, setSortValues] = useState({});
+    const [currentSortItem, setCurrentSort] = useState({});
 
     useEffect(() => {
         //only need to do this once so this is why this check is here
@@ -25,14 +28,19 @@ export function TableHeader({ tableData, setTableData, allData}) {
     }, [tableData, sortValues]);
 
     const sortHeader = (item) => {
+        const sortItem = {};
+
         const sortKey = sortValues[item];
         if (sortKey) {
             const direction = sortKey.direction || "down";
             const data = direction === "up" ? _.sortBy(allData, function (i) { return isNaN(i[sortKey.value]) ? i[sortKey.value].toString().toLowerCase() : i[sortKey.value];}) :
             _.sortBy(allData, function (i) {return isNaN(i[sortKey.value]) ? i[sortKey.value].toString().toLowerCase() : i[sortKey.value];}).reverse();
-            sortKey.direction = direction === "up" ? "down" : "up";
+            const newDirection = direction === "up" ? "down" :"up";
+            sortKey.direction = newDirection;
+            sortItem[item] = {direction: newDirection};
             setSortValues(sortValues);
             setTableData(data);
+            setCurrentSort(sortItem);
         }
     };
 
@@ -40,7 +48,17 @@ export function TableHeader({ tableData, setTableData, allData}) {
         <thead>
             <tr>
             {
-                Object.values(headerData).map((item, index) => <th key={index} onClick={() => sortHeader(item)}><label>{item}</label></th>)
+                Object.values(headerData).map((item, index) => {
+                    if (currentSortItem[item]) {
+                        const sortDirection = currentSortItem[item].direction;
+                        const icon = sortDirection  === "up" ? <FontAwesomeIcon icon={solid('arrow-up')} /> : <FontAwesomeIcon icon={solid('arrow-down')} />;
+                        return <th key={index} onClick={() => sortHeader(item)}>
+                            <label className="sort-item">{item}</label>
+                            {icon}
+                        </th>
+                    }
+                    return <th key={index} onClick={() => sortHeader(item)}><label>{item}</label></th>
+                })
             }
             </tr>
         </thead>
