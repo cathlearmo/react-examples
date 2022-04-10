@@ -33,7 +33,7 @@ export function TableHeader({ tableData, setTableData, allData}) {
         const sortKey = sortValues[item];
         if (sortKey) {
             const direction = sortKey.direction || "down";
-            const data = direction === "up" ? _.sortBy(allData, function (i) { return isNaN(i[sortKey.value]) ? i[sortKey.value].toString().toLowerCase() : i[sortKey.value];}) :
+            const data = direction === "down" ? _.sortBy(allData, function (i) { return isNaN(i[sortKey.value]) ? i[sortKey.value].toString().toLowerCase() : i[sortKey.value];}) :
             _.sortBy(allData, function (i) {return isNaN(i[sortKey.value]) ? i[sortKey.value].toString().toLowerCase() : i[sortKey.value];}).reverse();
             const newDirection = direction === "up" ? "down" :"up";
             sortKey.direction = newDirection;
