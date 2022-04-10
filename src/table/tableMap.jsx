@@ -9,19 +9,18 @@ export function TableHeader({ tableData, setTableData, allData}) {
     const [sortValues, setSortValues] = useState({});
 
     useEffect(() => {
-        if (tableData.length) {
+        //only need to do this once so this is why this check is here
+        if (tableData.length && !Object.keys(headerData).length) {
             let keys = Object.keys(tableData[0]);
             let newKeys = keys.map((key) => key.charAt(0).toUpperCase() + key.slice(1));
             newKeys = newKeys.map((key) => key.replace('_', ' '));
             setHeaderData(newKeys);
 
-            if (!Object.keys(sortValues).length) {
-                const sortKeys = newKeys.reduce((sortKeys, key, ind) => {
-                    sortKeys[key] = {value: keys[ind], direction: 'down'};
-                    return sortKeys;
-                }, {});
-                setSortValues(sortKeys);
-            }
+            const sortKeys = newKeys.reduce((sortKeys, key, ind) => {
+                sortKeys[key] = {value: keys[ind], direction: 'down'};
+                return sortKeys;
+            }, {});
+            setSortValues(sortKeys);
         }
     }, [tableData, sortValues]);
 
