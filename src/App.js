@@ -35,7 +35,7 @@ function App() {
               renders the first one that matches the current URL. */}
           <div className={"main-content"}>
             <Routes>
-              <Route path="/" element={<WelcomePage />}/>
+              <Route path="/react-examples" element={<WelcomePage />}/>
               <Route path="/fetch" element={<SearchPage />}/>
               <Route path="/table" element={<PersonTable />}/>
             </Routes>
