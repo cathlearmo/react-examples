@@ -42,6 +42,9 @@
         font-size: 13px;
         height: 45px;
         letter-spacing: 1px;
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     .blue-button {
