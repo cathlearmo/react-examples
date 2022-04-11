@@ -13,16 +13,27 @@
         }
         .desktop {
             font-size: 64px;
-            button {
-                width: 35%;
-            }
         }
     
         .mobile {
             font-size: 48px;
-            button {
-                width: 85%;
-            }
+        }
+    }
+
+    .desktop {
+        .blue-button {
+            width: 35%;
+        }
+        .pink-button {
+            width: 55%;
+        }
+    }
+    .mobile {
+        .blue-button {
+            width: 85%;
+        }
+        .pink-button {
+            width: 80%;
         }
     }
 
@@ -39,6 +50,16 @@
         color: white;
         &:hover {
             background-color: #2e5568;
+        }
+    }
+
+    .pink-button {
+        @extend .design-button;
+        background-color: #be85a5;
+        border: 2px solid #be85a5;
+        color: white;
+        &:hover {
+            background-color: #986a84;
         }
     }
     
@@ -72,7 +93,17 @@
         }
         margin-top: 20px;
     }
+    .product-container {
+        img {
+            height: 250px;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .product-item {
+            flex-basis: 25%;
+        }
+    }
 }
-
 
 

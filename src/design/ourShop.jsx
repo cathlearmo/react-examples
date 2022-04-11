@@ -1,5 +1,6 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { ProductContainer } from './productContainer.jsx';
 import './design.scss';
 
 export function OurShop() {
@@ -10,6 +11,7 @@ export function OurShop() {
         <div className={isDesktop ? 'our-shop desktop' : 'our-shop mobile'}>
             <label>Our Shop</label>
             <p>FREE GLASS with every order to help you Celebrate Burns Night. Check out offer on our glassware shop page.</p>
+            <ProductContainer/>
         </div>
     );
 }
