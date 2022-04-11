@@ -3,7 +3,7 @@ import mainBannerImage from './designImages/mobile-main-banner-image.jpg';
 import { useMediaQuery } from 'react-responsive';
 import './design.scss';
 
-export function ImageWithText() {
+export function MainBanner() {
 
     const isDesktop = useMediaQuery({ minWidth: 992 });
 

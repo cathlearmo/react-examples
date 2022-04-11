@@ -1,11 +1,12 @@
 import React from 'react';
-import { ImageWithText } from './imageWithText.jsx';
+import { MainBanner } from './mainBanner.jsx';
+import './design.scss';
 
 export function DesignPage() {
 
     return (
-        <div>
-            <ImageWithText/>
+        <div className="design-page">
+            <MainBanner/>
         </div>
     );
 }
