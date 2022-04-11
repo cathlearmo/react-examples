@@ -103,6 +103,12 @@
         .product-item {
             flex-basis: 25%;
         }
+        .product-text {
+            min-height: 2.3em;
+        }
+        .price {
+            font-weight: bold;
+        }
     }
 }
 
