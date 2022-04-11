@@ -9,6 +9,7 @@ export function OurShop() {
     return (
         <div className={isDesktop ? 'our-shop desktop' : 'our-shop mobile'}>
             <label>Our Shop</label>
+            <p>FREE GLASS with every order to help you Celebrate Burns Night. Check out offer on our glassware shop page.</p>
         </div>
     );
 }
