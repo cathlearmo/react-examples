@@ -2,31 +2,57 @@
     max-width: 1314px;
     font-family: Arial;
     font-size: 16px;
+
+    .main-banner {
+        position: relative;
+        text-align: center;
+        color: white;
+        img {
+            width: 100%;
+        }
+    }
+
+    .design-button {
+        font-size: 13px;
+        height: 45px;
+        letter-spacing: 1px;
+        width: 35%;
+    }
+
+    .blue-button {
+        @extend .design-button;
+        background-color: #3a6b82;
+        border: 2px solid #3a6b82;
+        color: white;
+        &:hover {
+            background-color: #2e5568;
+        }
+    }
+    
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        label {
+            font-weight: bold;
+        }
+    }
+
+    .desktop {
+        font-size: 64px;
+        button {
+            width: 35%;
+        }
+    }
+
+    .mobile {
+        font-size: 48px;
+        button {
+            width: 85%;
+        }
+    }
 }
 
-.main-banner {
-    position: relative;
-    text-align: center;
-    color: white;
-}
 
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.main-banner-title {
-    font-weight: bold;
-}
-
-.main-banner-title-desktop {
-    @extend .main-banner-title;
-    font-size: 64px;
-}
-.main-banner-title-mobile {
-    @extend .main-banner-title;
-    font-size: 48px;  
-}
 
