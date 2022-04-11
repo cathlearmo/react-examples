@@ -39,6 +39,7 @@
     }
 
     .design-button {
+        color: white;
         font-size: 13px;
         height: 45px;
         letter-spacing: 1px;
@@ -51,7 +52,6 @@
         @extend .design-button;
         background-color: #3a6b82;
         border: 2px solid #3a6b82;
-        color: white;
         &:hover {
             background-color: #2e5568;
         }
@@ -61,7 +61,6 @@
         @extend .design-button;
         background-color: #be85a5;
         border: 2px solid #be85a5;
-        color: white;
         &:hover {
             background-color: #986a84;
         }
