@@ -6,7 +6,6 @@ import './design.scss';
 export function MainBanner() {
 
     const isDesktop = useMediaQuery({ minWidth: 992 });
-
     const contentClass = isDesktop ? 'centered desktop' : 'centered mobile';
 
     return (

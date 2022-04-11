@@ -10,6 +10,19 @@
         img {
             width: 100%;
         }
+        .desktop {
+            font-size: 64px;
+            button {
+                width: 35%;
+            }
+        }
+    
+        .mobile {
+            font-size: 48px;
+            button {
+                width: 85%;
+            }
+        }
     }
 
     .design-button {
@@ -38,18 +51,19 @@
         }
     }
 
-    .desktop {
-        font-size: 64px;
-        button {
-            width: 35%;
+    .our-shop.desktop {
+        label {
+            font-size: 44px;
+            font-weight: bold;
         }
+        margin-top: 30px;
     }
-
-    .mobile {
-        font-size: 48px;
-        button {
-            width: 85%;
+    .our-shop.mobile {
+        label {
+            font-size: 28px;
+            font-weight: bold;
         }
+        margin-top: 20px;
     }
 }
 
