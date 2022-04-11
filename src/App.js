@@ -4,6 +4,7 @@ import {
   Routes, Route, Link } from "react-router-dom";
 import { PersonTable } from './table/tableType.jsx';
 import { SearchPage } from './search/searchPage.jsx';
+import { DesignPage } from './design/designPage.jsx';
 import { Banner } from './banners/banner.jsx';
 import './App.scss';
 
@@ -28,6 +29,9 @@ function App() {
                 <li>
                   <Link to="/table" className="link">Table demo</Link>
                 </li>
+                <li>
+                  <Link to="/design" className="link">Design demo</Link>
+                </li>
               </ul>
           </nav>
 
@@ -38,6 +42,7 @@ function App() {
               <Route path="/react-examples" element={<WelcomePage />}/>
               <Route path="/fetch" element={<SearchPage />}/>
               <Route path="/table" element={<PersonTable />}/>
+              <Route path="/design" element={<DesignPage />}/>
             </Routes>
           </div>
         </div>

@@ -1,0 +1,27 @@
+.main-banner {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-banner-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.main-banner-title-desktop {
+    @extend .main-banner-title;
+    font-size: 64px;
+}
+.main-banner-title-mobile {
+    @extend .main-banner-title;
+    font-size: 48px;  
+}
+
