@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from './button.jsx';
 import './design.scss';
 
 export function ProductItem({image, text, price}) {
@@ -8,9 +9,7 @@ export function ProductItem({image, text, price}) {
             <img src={image}/>
             <p className="product-text">{text}</p>
             <p className="price">{price}</p>
-            <div>
-                <button className="pink-button" type="button">VIEW DETAILS</button>
-            </div>
+            <Button className="pink-button" text="VIEW DETAILS"/>
         </div>
     );
 }

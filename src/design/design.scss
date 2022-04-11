@@ -3,6 +3,7 @@
     max-width: 1314px;
     font-family: Arial;
     font-size: 16px;
+    color: #002c4d;
 
     .main-banner {
         position: relative;
@@ -110,6 +111,19 @@
             font-weight: bold;
         }
     }
+    .visit-shop.desktop {
+        margin-top: 30px;
+        .blue-button {
+            width: 18%;
+        }
+    }
+    .visit-shop.mobile {
+        margin-top: 20px;
+        .blue-button {
+            width: 40%;
+        }
+    }
+
 }
 
 

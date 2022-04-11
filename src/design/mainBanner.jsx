@@ -1,6 +1,7 @@
 import React from 'react';
 import mainBannerImage from './designImages/mobile-main-banner-image.jpg';
 import { useMediaQuery } from 'react-responsive';
+import { Button } from './button.jsx';
 import './design.scss';
 
 export function MainBanner() {
@@ -13,9 +14,7 @@ export function MainBanner() {
             <img src={mainBannerImage}/>
             <div className={contentClass}>
                 <label>Crafting Spirits with Passion</label>
-                <div>
-                    <button className="blue-button" type="button">VISIT OUR SHOP</button>
-                </div>
+                <Button className="blue-button" text="VISIT OUR SHOP"/>
             </div>
         </div>
     );
