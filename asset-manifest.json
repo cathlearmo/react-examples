@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-examples/static/css/main.d9362226.css",
+    "main.css": "/react-examples/static/css/main.118bee85.css",
     "main.js": "/react-examples/static/js/main.7b544414.js",
     "static/js/787.bc7d429a.chunk.js": "/react-examples/static/js/787.bc7d429a.chunk.js",
     "static/media/desktop-block-image-3.jpg": "/react-examples/static/media/desktop-block-image-3.e2eb114880fe4405aef5.jpg",
@@ -12,12 +12,12 @@
     "static/media/desktop-product-image-1.jpg": "/react-examples/static/media/desktop-product-image-1.cf8bafd9482c01091e95.jpg",
     "static/media/desktop-product-image-2.jpg": "/react-examples/static/media/desktop-product-image-2.82549360f352d7bb38cc.jpg",
     "index.html": "/react-examples/index.html",
-    "main.d9362226.css.map": "/react-examples/static/css/main.d9362226.css.map",
+    "main.118bee85.css.map": "/react-examples/static/css/main.118bee85.css.map",
     "main.7b544414.js.map": "/react-examples/static/js/main.7b544414.js.map",
     "787.bc7d429a.chunk.js.map": "/react-examples/static/js/787.bc7d429a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d9362226.css",
+    "static/css/main.118bee85.css",
     "static/js/main.7b544414.js"
   ]
 }
