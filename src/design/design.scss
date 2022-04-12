@@ -104,9 +104,6 @@
     }
 
     .product-container {
-        img {
-            height: 250px;
-        }
         @extend .flex-container;
         .product-item {
             flex-basis: 25%;
@@ -117,12 +114,22 @@
     }
     .product-container.mobile {
         .product-text {
-            min-height: 3.3em;
+            min-height: 4.3em;
+        }
+        .product-item {
+            margin-right: 20px;
+            margin-top: 20px;
+        }
+        img {
+            height: 230px;
         }
     }
     .product-container.desktop {
         .product-text {
             min-height: 2.3em;
+        }
+        img {
+            height: 250px;
         }
     }
     .visit-shop.desktop {
