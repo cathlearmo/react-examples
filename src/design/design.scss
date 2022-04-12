@@ -106,11 +106,18 @@
         .product-item {
             flex-basis: 25%;
         }
-        .product-text {
-            min-height: 2.3em;
-        }
         .price {
             font-weight: bold;
+        }
+    }
+    .product-container.mobile {
+        .product-text {
+            min-height: 3.3em;
+        }
+    }
+    .product-container.desktop {
+        .product-text {
+            min-height: 2.3em;
         }
     }
     .visit-shop.desktop {
