@@ -7,7 +7,7 @@ import { useInput } from "../customHooks/useInput.jsx";
 
 export function SearchQuery() {
     const searchPhrase = useInput('');
-    const [url, setUrl] = React.useState('https://help-search-api-prod.herokuapp.com/search?query=');
+    const [url, setUrl] = React.useState('');
 
     const { data } = useFetch(url, []);
 

@@ -6,7 +6,8 @@ export const useFetch = (url, initialValue) => {
 
     useEffect(() => {
         let mounted = true;
-        fetch(url)
+        if (url) {
+            fetch(url)
             .then((data) => {
                 if (!data.ok) {
                     throw Error(data.status);
@@ -20,10 +21,11 @@ export const useFetch = (url, initialValue) => {
             }).catch((e) => {
                 setError(e);
             });
-        //this is here to avoid setting state when the component is not mounted
-        return function cleanup() {
-            mounted = false;
-        };
+            //this is here to avoid setting state when the component is not mounted
+            return function cleanup() {
+                mounted = false;
+            };
+        }
     }, [url]);
 
     return { data, error };
