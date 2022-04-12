@@ -25,7 +25,7 @@ export function TableHeader({ tableData, setTableData, allData}) {
             }, {});
             setSortValues(sortKeys);
         }
-    }, [tableData, sortValues]);
+    }, [tableData, sortValues, headerData]);
 
     const sortHeader = (item) => {
         const sortItem = {};

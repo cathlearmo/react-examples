@@ -13,7 +13,7 @@ export function MainBanner() {
 
     return (
         <div className="main-banner">
-            <img src={image}/>
+            <img src={image} alt="Spirit being poured in a glass"/>
             <div className={contentClass}>
                 <label>Crafting Spirits with Passion</label>
                 <Button className="blue-button" text="VISIT OUR SHOP"/>

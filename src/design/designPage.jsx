@@ -1,6 +1,7 @@
 import React from 'react';
 import { MainBanner } from './mainBanner.jsx';
 import { OurShop } from './ourShop.jsx';
+import { Blocks } from './blocks.jsx';
 import './design.scss';
 
 export function DesignPage() {
@@ -9,6 +10,7 @@ export function DesignPage() {
         <div className="design-page">
             <MainBanner/>
             <OurShop />
+            <Blocks />
         </div>
     );
 }

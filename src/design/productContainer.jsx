@@ -20,16 +20,19 @@ export function ProductContainer() {
                     image={product1} 
                     text={'Edinburgh Gin Gooseberry & Elderflower Flavoured Gin'}
                     price={'£28.00'}
+                    altText="Gin bottle for Edinburgh gin gooseberry and elderflower"
                 />
                 <ProductItem
                     image={product2} 
                     text={'Sheep Dip Islay Blended Malt Whisky'}
                     price={'£35.00'}
+                    altText="Whisky bottle for Sheep Dip Islay"
                 />
                 <ProductItem
                     image={product3} 
                     text={"Macleod's Single Malt Whisky"}
                     price={'£28.00'}
+                    altText="Whisky bottle for Macleod's single malt"
                 />
                 <ProductItem
                     image={product4} 
