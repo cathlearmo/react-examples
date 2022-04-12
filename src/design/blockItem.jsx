@@ -5,7 +5,12 @@ export function BlockItem({image, altText}) {
 
     return (
         <div className={'block-item'}>
-            <img src={image} alt={altText}/>
+            <div className="image-stack">
+                <div className="block-image">
+                    <img src={image} alt={altText}/>
+                </div>
+                <div className="block-overlay"/>
+            </div>
         </div>
     );
 }

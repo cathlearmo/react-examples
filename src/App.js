@@ -6,6 +6,7 @@ import { PersonTable } from './table/tableType.jsx';
 import { SearchPage } from './search/searchPage.jsx';
 import { DesignPage } from './design/designPage.jsx';
 import { Banner } from './banners/banner.jsx';
+import { useMediaQuery } from 'react-responsive';
 import './App.scss';
 
 const WelcomePage = () => {
@@ -17,10 +18,13 @@ const WelcomePage = () => {
 /*use React Router for client-side page navigation*/
 
 function App() {
+  const isDesktop = useMediaQuery({ minWidth: 992 });
+  const contentClass = isDesktop ? 'page-with-sidebar desktop' : 'page-with-sidebar mobile';
+
   return (
 	<Router>
       <div className="App">
-        <div className="page-with-sidebar">
+        <div className={contentClass}>
           <nav>
               <ul style={{ listStyleType: "none", padding: 0 }}>
                 <li>
