@@ -1,6 +1,7 @@
 .design-page {
     background-color: white;
     max-width: 1314px;
+    overflow-x: auto;
     font-family: Arial;
     font-size: 16px;
     color: #002c4d;
@@ -15,7 +16,6 @@
         .desktop {
             font-size: 64px;
         }
-    
         .mobile {
             font-size: 48px;
         }
@@ -99,7 +99,6 @@
 
     .flex-container {
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
     }
 
@@ -113,6 +112,7 @@
         }
     }
     .product-container.mobile {
+        flex-wrap: wrap;
         .product-text {
             min-height: 4.3em;
         }
@@ -129,7 +129,7 @@
             min-height: 2.3em;
         }
         img {
-            height: 250px;
+            height: 300px;
         }
     }
     .visit-shop.desktop {
@@ -163,6 +163,7 @@
     }
     .block-container.mobile {
         justify-content: center;
+        flex-wrap: wrap;
         .block-item {
             margin-bottom: 20px;
         }
