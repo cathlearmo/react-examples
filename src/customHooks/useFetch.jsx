@@ -14,7 +14,7 @@ export const useFetch = (url, initialValue) => {
                 } else {
                     data.json().then((data) => {
                         if (mounted) {
-                            setData(data.results);
+                            setData(data.results || data);
                         }
                     });
                 }
