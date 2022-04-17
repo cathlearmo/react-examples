@@ -11,8 +11,9 @@ import './App.scss';
 
 const WelcomePage = () => {
   const textOne = "Welcome to my react demo web site.";
-  const textTwo = "Click on a link in the navigation bar to get started.";
+  const textTwo = "Click on a link in the menu to get started.";
   return <Banner text1={textOne} text2={textTwo}/>
+}
 
 /*use React Router for client-side page navigation*/
 
