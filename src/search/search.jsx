@@ -28,7 +28,7 @@ export function SearchQuery() {
                     onKeyDown={handleKeyDown} {...searchPhrase} /> 
                 <input className="search-button" type="button" value="Search" onClick={doSearch} />
             </div>
-            {<SearchResults data={data}/>}
+            <SearchResults data={data}/>
             
         </>
     );
