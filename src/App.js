@@ -4,7 +4,7 @@ import {
   Routes, Route, Link } from "react-router-dom";
 import { PersonTable } from './table/tableType.jsx';
 import { SearchPage } from './search/searchPage.jsx';
-import { DesignPage } from './design/designPage.jsx';
+//import { DesignPage } from './design/designPage.jsx';
 import { Banner } from './banners/banner.jsx';
 import { useMediaQuery } from 'react-responsive';
 import './App.scss';
@@ -28,14 +28,17 @@ function App() {
           <nav>
               <ul style={{ listStyleType: "none", padding: 0 }}>
                 <li>
+                  <Link to="/" className="link">Home</Link>
+                </li>
+                <li>
                   <Link to="/fetch" className="link">Fetch demo</Link>
                 </li>
                 <li>
                   <Link to="/table" className="link">Table demo</Link>
                 </li>
-                <li>
+                {/*<li>
                   <Link to="/design" className="link">Design demo</Link>
-                </li>
+                </li>*/}
               </ul>
           </nav>
 
@@ -43,10 +46,11 @@ function App() {
               renders the first one that matches the current URL. */}
           <div className={"main-content"}>
             <Routes>
+              <Route path="/" element={<WelcomePage />}/>
               <Route path="/react-examples" element={<WelcomePage />}/>
               <Route path="/fetch" element={<SearchPage />}/>
               <Route path="/table" element={<PersonTable />}/>
-              <Route path="/design" element={<DesignPage />}/>
+              {/*<Route path="/design" element={<DesignPage />}*/}
             </Routes>
           </div>
         </div>

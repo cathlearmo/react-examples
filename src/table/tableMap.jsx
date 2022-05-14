@@ -52,12 +52,12 @@ export function TableHeader({ tableData, setTableData, allData}) {
                     if (currentSortItem[item]) {
                         const sortDirection = currentSortItem[item].direction;
                         const icon = sortDirection  === "up" ? <FontAwesomeIcon icon={solid('arrow-up')} /> : <FontAwesomeIcon icon={solid('arrow-down')} />;
-                        return <th key={index} onClick={() => sortHeader(item)}>
-                            <label className="sort-item">{item}</label>
+                        return <th key={index}>
+                            <label className="sort-item" aria-label={item} onClick={() => sortHeader(item)}>{item}</label>
                             {icon}
                         </th>
                     }
-                    return <th key={index} onClick={() => sortHeader(item)}><label>{item}</label></th>
+                    return <th key={index}><label aria-label={item} onClick={() => sortHeader(item)}>{item}</label></th>
                 })
             }
             </tr>
@@ -66,7 +66,7 @@ export function TableHeader({ tableData, setTableData, allData}) {
 }
 
 
-export function TableBody({ tableData}) {
+export function TableBody({ tableData }) {
 
     return (
         <tbody>
@@ -75,7 +75,7 @@ export function TableBody({ tableData}) {
                     return (
                         <tr key={index}>
                         {
-                            Object.keys(item).map((key, ind) => <td key={ind}><label>{item[key]}</label></td>)
+                            Object.keys(item).map((key, ind) => <td key={ind}><label aria-label={item[key]}>{item[key]}</label></td>)
                         }
                         </tr>
                     )
@@ -85,15 +85,19 @@ export function TableBody({ tableData}) {
     );
 }
 
-export function Table({className, tableData, setTableData, allData}) {
-    return (
-        <div className={className}>
-            <table>
-                <TableHeader tableData={tableData} setTableData={setTableData} allData={allData} />
-                <TableBody tableData={tableData} />
-            </table>
-        </div>
-    )
+export function Table({className = "table-class", tableData = [], setTableData, allData = []}) {
+    if (tableData.length > 0) {
+        return (
+            <div className={className}>
+                <table>
+                    <TableHeader tableData={tableData} setTableData={setTableData} allData={allData} />
+                    <TableBody tableData={tableData} />
+                </table>
+            </div>
+        )
+    }
+    return null;
+
 };
 
 

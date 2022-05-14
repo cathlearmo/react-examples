@@ -4,6 +4,11 @@
 
     thead {
         background-color: gainsboro;
+        label {
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
 
     table {
