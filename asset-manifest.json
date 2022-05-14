@@ -1,23 +1,15 @@
 {
   "files": {
-    "main.css": "/react-examples/static/css/main.fd3c927e.css",
-    "main.js": "/react-examples/static/js/main.83ab8699.js",
+    "main.css": "/react-examples/static/css/main.d7c4cc54.css",
+    "main.js": "/react-examples/static/js/main.4fd855fe.js",
     "static/js/787.bc7d429a.chunk.js": "/react-examples/static/js/787.bc7d429a.chunk.js",
-    "static/media/desktop-block-image-3.jpg": "/react-examples/static/media/desktop-block-image-3.e2eb114880fe4405aef5.jpg",
-    "static/media/desktop-block-image-1.jpg": "/react-examples/static/media/desktop-block-image-1.9b58d47e9b0d11e0db84.jpg",
-    "static/media/desktop-block-image-2.jpg": "/react-examples/static/media/desktop-block-image-2.454e6fdad5279dbb177c.jpg",
-    "static/media/mobile-main-banner-image.jpg": "/react-examples/static/media/mobile-main-banner-image.ae800f9a327ea58d7b1f.jpg",
-    "static/media/desktop-product-image-4.jpg": "/react-examples/static/media/desktop-product-image-4.ffb821ff6f937e0bb3cd.jpg",
-    "static/media/desktop-product-image-3.jpg": "/react-examples/static/media/desktop-product-image-3.7f0e135663e4f6a190f3.jpg",
-    "static/media/desktop-product-image-1.jpg": "/react-examples/static/media/desktop-product-image-1.cf8bafd9482c01091e95.jpg",
-    "static/media/desktop-product-image-2.jpg": "/react-examples/static/media/desktop-product-image-2.82549360f352d7bb38cc.jpg",
     "index.html": "/react-examples/index.html",
-    "main.fd3c927e.css.map": "/react-examples/static/css/main.fd3c927e.css.map",
-    "main.83ab8699.js.map": "/react-examples/static/js/main.83ab8699.js.map",
+    "main.d7c4cc54.css.map": "/react-examples/static/css/main.d7c4cc54.css.map",
+    "main.4fd855fe.js.map": "/react-examples/static/js/main.4fd855fe.js.map",
     "787.bc7d429a.chunk.js.map": "/react-examples/static/js/787.bc7d429a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd3c927e.css",
-    "static/js/main.83ab8699.js"
+    "static/css/main.d7c4cc54.css",
+    "static/js/main.4fd855fe.js"
   ]
 }
