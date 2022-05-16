@@ -5,6 +5,22 @@ import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 //Can use the table header and body to map any number of th and td values
 
+export const doSort = (headerKey, allData, sortValues) => {
+    const sortItem = {};
+    let data = allData;
+
+    const sortKey = sortValues[headerKey];
+    if (sortKey) {
+        const direction = sortKey.direction || "down";
+        data = direction === "down" ? _.sortBy(allData, function (i) { return isNaN(i[sortKey.value]) ? i[sortKey.value].toString().toLowerCase() : i[sortKey.value];}) :
+        _.sortBy(allData, function (i) {return isNaN(i[sortKey.value]) ? i[sortKey.value].toString().toLowerCase() : i[sortKey.value];}).reverse();
+        const newDirection = direction === "up" ? "down" :"up";
+        sortKey.direction = newDirection;
+        sortItem[headerKey] = {direction: newDirection};
+    }
+    return {data, sortItem};
+};
+
 export function TableHeader({ tableData, setTableData, allData}) {
 
     const [headerData, setHeaderData] = useState({});
@@ -27,17 +43,10 @@ export function TableHeader({ tableData, setTableData, allData}) {
         }
     }, [tableData, sortValues, headerData]);
 
-    const sortHeader = (item) => {
-        const sortItem = {};
+    const sortHeader = (headerKey) => {
+        const {data, sortItem} = doSort(headerKey, allData, sortValues);
 
-        const sortKey = sortValues[item];
-        if (sortKey) {
-            const direction = sortKey.direction || "down";
-            const data = direction === "down" ? _.sortBy(allData, function (i) { return isNaN(i[sortKey.value]) ? i[sortKey.value].toString().toLowerCase() : i[sortKey.value];}) :
-            _.sortBy(allData, function (i) {return isNaN(i[sortKey.value]) ? i[sortKey.value].toString().toLowerCase() : i[sortKey.value];}).reverse();
-            const newDirection = direction === "up" ? "down" :"up";
-            sortKey.direction = newDirection;
-            sortItem[item] = {direction: newDirection};
+        if (data.length) {
             setTableData(data);
             setCurrentSort(sortItem);
         }
