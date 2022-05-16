@@ -53,7 +53,6 @@ it("can sort data by the Name header key", () => {
     let {data} = doSort(headerKey, testAllData, sortValues);
     expect(data[0].name).toEqual('Aarika');
     expect(data[4].name).toEqual('Zen');
-
 });
 
 it("can sort data by the Id header key", () => {
