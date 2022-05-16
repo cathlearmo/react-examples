@@ -38,7 +38,6 @@ export function TableHeader({ tableData, setTableData, allData}) {
             const newDirection = direction === "up" ? "down" :"up";
             sortKey.direction = newDirection;
             sortItem[item] = {direction: newDirection};
-            setSortValues(sortValues);
             setTableData(data);
             setCurrentSort(sortItem);
         }
