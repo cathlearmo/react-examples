@@ -32,7 +32,7 @@ export function SearchResults({data}) {
                 currentPage={currentPage}
                 totalCount={data.length}
                 pageSize={pageSize}
-                onPageChange={page => setCurrentPage(page)}
+                onPageChange={(page) => setCurrentPage(page)}
             />
         </>
     );

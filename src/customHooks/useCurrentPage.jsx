@@ -18,7 +18,3 @@ export const useCurrentPage = (data, pageSize = PageSize) => {
         currentData
     };
 };
-
-
-
-
