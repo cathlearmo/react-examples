@@ -5,21 +5,18 @@ import {
 import { PersonTable } from './table/tableType.jsx';
 import { SearchPage } from './search/searchPage.jsx';
 //import { DesignPage } from './design/designPage.jsx';
-import { Banner } from './banners/banner.jsx';
+import { WelcomePage } from "./welcome/welcomePage.jsx";
 import { useMediaQuery } from 'react-responsive';
+import { ThemeContext } from './welcome/themeContext.jsx';
 import './App.scss';
-
-const WelcomePage = () => {
-  const textOne = "Welcome to my react demo web site.";
-  const textTwo = "Click on a link in the menu to get started.";
-  return <Banner text1={textOne} text2={textTwo}/>
-}
 
 /*use React Router for client-side page navigation*/
 
 function App() {
+  const { theme } = React.useContext(ThemeContext);
   const isDesktop = useMediaQuery({ minWidth: 992 });
-  const contentClass = isDesktop ? 'page-with-sidebar desktop' : 'page-with-sidebar mobile';
+  let contentClass = isDesktop ? 'page-with-sidebar desktop ' : 'page-with-sidebar mobile ';
+  contentClass = contentClass + theme;
 
   return (
 	<Router>
@@ -44,7 +41,7 @@ function App() {
 
           {/* <Routes> looks through its child <Route>s and
               renders the first one that matches the current URL. */}
-          <div className={"main-content"}>
+          <div className={'main-content ' + theme}>
             <Routes>
               <Route path="/" element={<WelcomePage />}/>
               <Route path="/react-examples" element={<WelcomePage />}/>
