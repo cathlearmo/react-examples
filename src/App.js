@@ -8,6 +8,7 @@ import { SearchPage } from './search/searchPage.jsx';
 import { WelcomePage } from "./welcome/welcomePage.jsx";
 import { useMediaQuery } from 'react-responsive';
 import { ThemeContext } from './welcome/themeContext.jsx';
+import { SelectTheme } from './welcome/selectTheme.jsx';
 import './App.scss';
 
 /*use React Router for client-side page navigation*/
@@ -37,6 +38,7 @@ function App() {
                   <Link to="/design" className="link">Design demo</Link>
                 </li>*/}
               </ul>
+              <SelectTheme/>
           </nav>
 
           {/* <Routes> looks through its child <Route>s and
