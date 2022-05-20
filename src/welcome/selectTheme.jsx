@@ -6,7 +6,7 @@ export const SelectTheme = () => {
 
     return (
         <div className="theme-select">
-          <label>{'Select Theme:  '}
+          <label>{'Theme:  '}
               <select value={theme} onChange={(e) => setTheme(e.target.value)}>
                 <option value={'light'}>light</option>
                 <option value={'dark'}>dark</option>
