@@ -9,6 +9,7 @@ import { WelcomePage } from "./welcome/welcomePage.jsx";
 import { useMediaQuery } from 'react-responsive';
 import { ThemeContext } from './welcome/themeContext.jsx';
 import { SelectTheme } from './welcome/selectTheme.jsx';
+import { GridDemo } from './grid/gridDemo.jsx';
 import './App.scss';
 
 /*use React Router for client-side page navigation*/
@@ -34,6 +35,9 @@ function App() {
                 <li>
                   <Link to="/table" className="link">Table demo</Link>
                 </li>
+                <li>
+                  <Link to="/grid" className="link">Grid demo</Link>
+                </li>
                 {/*<li>
                   <Link to="/design" className="link">Design demo</Link>
                 </li>*/}
@@ -49,6 +53,7 @@ function App() {
               <Route path="/react-examples" element={<WelcomePage />}/>
               <Route path="/fetch" element={<SearchPage />}/>
               <Route path="/table" element={<PersonTable />}/>
+              <Route path="/grid" element={<GridDemo />}/>
               {/*<Route path="/design" element={<DesignPage />}*/}
             </Routes>
           </div>

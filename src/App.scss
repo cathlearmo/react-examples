@@ -67,8 +67,15 @@
   .pagination-item {
     color: white;
   }
+  .box {
+    background-color: darkslategrey;
+  }
 }
 
 .main-content.light {
   background-color:#F3F7FB;
+  .box {
+    background-color: white;
+    color: black;
+  }
 }
