@@ -3,6 +3,8 @@ import './grid.scss';
 
 export function GridDemo() {
 
+    const [toggleClass, setToggleClass] = React.useState(false);
+
     return (
         <div className="grid-parent">
             <div className="left-grid">
@@ -17,12 +19,14 @@ export function GridDemo() {
             <div className="right-grid">
                 <h2>Standard Grid</h2>
                 <div className="wrapper">
-                    <div className="box standard-a">A</div>
-                    <div className="box standard-b">B</div>
-                    <div className="box standard-c">C</div>
-                    <div className="box standard-d">D</div>
-                    <div className="box standard-e">E</div>
-                    <div className="box standard-f">F</div>
+                    <div className={toggleClass ? 'box standard-a' : 'box'} onClick={() => setToggleClass(!toggleClass)}>
+                        { toggleClass ? "A - Click to Sort!" : "A - Click to Mix!" }
+                    </div>
+                    <div className={toggleClass ? 'box standard-b' : 'box'}>B</div>
+                    <div className={toggleClass ? 'box standard-c' : 'box'}>C</div>
+                    <div className={toggleClass ? 'box standard-d' : 'box'}>D</div>
+                    <div className={toggleClass ? 'box standard-e' : 'box'}>E</div>
+                    <div className={toggleClass ? 'box standard-f' : 'box'}>F</div>
                 </div>
             </div>
         </div>
