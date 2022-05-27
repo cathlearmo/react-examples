@@ -13,12 +13,15 @@ export function SearchQuery() {
 
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
-            setUrl(`https://help-search-api-prod.herokuapp.com/search?query=${searchPhrase.value}`);
+            doSearch();
         }
     };
 
     const doSearch = () => {
-        setUrl(`https://help-search-api-prod.herokuapp.com/search?query=${searchPhrase.value}`);
+        //mark state update as not urgent
+        React.startTransition(() => {
+            setUrl(`https://help-search-api-prod.herokuapp.com/search?query=${searchPhrase.value}`);
+        });
     };
 
     return (
