@@ -14,7 +14,7 @@ it("it shows 3 tabs the Product tab is the current one", () => {
     expect(tabThree).toHaveLength(1);
 });
 
-it("Clicking the second tab makes it current and can select checkboxes", async () => {
+it("Clicking the second tab makes it current", async () => {
     const user = userEvent.setup();
     render(<TabDemo />);
     const detailsTab = screen.getByText('Details');
@@ -44,4 +44,4 @@ it("Selects checkbox group on Details tab can use checkbox select all", async ()
     await user.click(boxes[2]);
     await user.click(boxes[3]);
     expect(boxes[0]).not.toBeChecked();
-})
+});
