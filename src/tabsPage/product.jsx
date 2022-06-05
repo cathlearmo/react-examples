@@ -23,14 +23,14 @@ export function ProductDetails() {
         {label: 'Star', isChecked: false}
     ];
 
-    const { boxes } = useCheckboxes(checkboxGroup);
+    const { checkBoxes } = useCheckboxes(checkboxGroup, true);
 
     return (
         <>
             <div className={'product-detail-line'}>
                 <label>{description}</label>
                 <h2>Keywords</h2>
-                {boxes}
+                {checkBoxes}
             </div>
         </>
     );

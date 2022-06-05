@@ -4,35 +4,53 @@ import React from 'react';
     checkboxItems (array of objects contains id, isChecked boolean, label)
 */
 
-export function useCheckboxes(checkBoxItems = [], className = "checkbox-group") {
+export function useCheckboxes(checkBoxItems = [], showSelectAll = false, className = "checkbox-group") {
 
-    const [checkBoxState, setCheckboxes] = React.useState(checkBoxItems);
+    const [checkBoxState, setCheckboxState] = React.useState({});
+    const [selectAll, setSelectAll] = React.useState(false);
 
-    const updateOption = (option) => {
-        checkBoxState.forEach((item) => {
-            const value = item.id || item.label;
-            if (value === option.id || value === option.label) {
-                item.isChecked = !option.isChecked;
-            }
+    React.useEffect(() => {
+        let newState = {};
+        checkBoxItems.forEach((item) => {
+            newState[item.label] = item.isChecked;
         });
-        setCheckboxes(checkBoxState);
+        setCheckboxState(newState);
+    }, []);
+
+    React.useEffect(() => {
+        if (Object.keys(checkBoxState).length) {
+            let newState = Object.assign({}, checkBoxState);
+            Object.keys(newState).forEach((key) => {
+                newState[key] = selectAll;
+            });
+            setCheckboxState(newState);
+        }
+    }, [selectAll]);
+
+    const updateOption = (e, key) => {
+        let newState = Object.assign({}, checkBoxState);
+        newState[key] = !newState[key];
+        setCheckboxState(newState);
     }
 
-    const boxes = <div className={className}>
-        {
-            checkBoxState.map((option) => <div key={option.id || option.label} onClick={() => updateOption(option)}>
-                <label>{option.label}
-                    <input type="checkbox" defaultChecked={option.isChecked} onChange={() => updateOption(option)}/>
-                </label>
-            </div>)
-        }
-    </div> 
+    const checkBoxes = <>
+        {showSelectAll && <input type="checkbox" checked={selectAll} onChange={() => setSelectAll(!selectAll)}/>}
+        <div className={className}>
+            {
+                Object.keys(checkBoxState).map((key) => <div key={key}>
+                    <label>{key}
+                        <input type="checkbox" checked={checkBoxState[key] || false} onChange={(e) => updateOption(e, key)} />
+                    </label>
+                </div>)
+            }
+        </div> 
+    </>
 
     //checkboxState is returned so the calling component can use the checked boxes
     //boxes is the jsx code returned
 
     return {
-        boxes,
+        checkBoxes,
         checkBoxState
     };
 }	

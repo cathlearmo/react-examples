@@ -80,9 +80,11 @@
   }
 }
 
-input[type="checkbox"] {
-  float: left;
-  position: relative;
-  bottom: -3px;
-  margin-right: 4px;
+.checkbox-group {
+  input[type="checkbox"] {
+    float: left;
+    position: relative;
+    bottom: -3px;
+    margin-right: 4px;
+  }
 }
