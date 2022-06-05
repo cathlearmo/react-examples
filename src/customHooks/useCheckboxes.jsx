@@ -27,19 +27,33 @@ export function useCheckboxes(checkBoxItems = [], showSelectAll = false, classNa
         }
     }, [selectAll]);
 
-    const updateOption = (e, key) => {
+    const updateOption = (key) => {
         let newState = Object.assign({}, checkBoxState);
         newState[key] = !newState[key];
         setCheckboxState(newState);
+        if (showSelectAll) {
+            const notChecked = Object.keys(newState).filter((key) => newState[key] === false);
+            const checked = Object.keys(newState).filter((key) => newState[key] === true);
+            if (notChecked.length > 0 && checked.length > 0) {
+                document.getElementById("select-all").indeterminate = true;
+            } else {
+                document.getElementById("select-all").indeterminate = false;
+                if (notChecked.length) {
+                    setSelectAll(false);
+                } else {
+                    setSelectAll(true);
+                }
+            }
+        }
     }
 
     const checkBoxes = <>
-        {showSelectAll && <input type="checkbox" checked={selectAll} onChange={() => setSelectAll(!selectAll)}/>}
+        {showSelectAll && <input type="checkbox" id="select-all" checked={selectAll} onChange={() => setSelectAll(!selectAll)}/>}
         <div className={className}>
             {
                 Object.keys(checkBoxState).map((key) => <div key={key}>
                     <label>{key}
-                        <input type="checkbox" checked={checkBoxState[key] || false} onChange={(e) => updateOption(e, key)} />
+                        <input type="checkbox" checked={checkBoxState[key] || false} onChange={() => updateOption(key)} />
                     </label>
                 </div>)
             }
