@@ -2,42 +2,44 @@ import React from 'react';
 
 /* returns checkboxes with labels and the checkbox state (whether they are checked or not) 
     checkboxItems (array of objects contains id, isChecked boolean, label)
+    Also has a select all box which will select and deselect all checkboxes
 */
 
 export function useCheckboxes(checkBoxItems = [], showSelectAll = false, className = "checkbox-group") {
 
-    const [checkBoxState, setCheckboxState] = React.useState({});
     const [selectAll, setSelectAll] = React.useState(false);
+    const [checkBoxState, setCheckboxState] = React.useState([]);
+    const selectAllId = React.useId();
 
     React.useEffect(() => {
-        let newState = {};
-        checkBoxItems.forEach((item) => {
-            newState[item.label] = item.isChecked;
-        });
-        setCheckboxState(newState);
+        setCheckboxState(checkBoxItems);
     }, []);
 
     React.useEffect(() => {
-        if (Object.keys(checkBoxState).length) {
-            let newState = Object.assign({}, checkBoxState);
-            Object.keys(newState).forEach((key) => {
-                newState[key] = selectAll;
+        if (checkBoxState.length) {
+            let newState = [...checkBoxState];
+            newState.forEach((item) => {
+                item.isChecked = selectAll;
             });
             setCheckboxState(newState);
         }
     }, [selectAll]);
 
-    const updateOption = (key) => {
-        let newState = Object.assign({}, checkBoxState);
-        newState[key] = !newState[key];
+    const updateOption = (selectedLabel) => {
+        let newState = [...checkBoxState];
+        newState.forEach((item) => {
+            if (item.label === selectedLabel) {
+                item.isChecked = !item.isChecked;
+            }
+        })
         setCheckboxState(newState);
         if (showSelectAll) {
-            const notChecked = Object.keys(newState).filter((key) => newState[key] === false);
-            const checked = Object.keys(newState).filter((key) => newState[key] === true);
+            const notChecked = newState.filter((item) => item.isChecked === false);
+            const checked = newState.filter((item) => item.isChecked === true);
             if (notChecked.length > 0 && checked.length > 0) {
-                document.getElementById("select-all").indeterminate = true;
+                document.getElementById(selectAllId).indeterminate = true;
             } else {
-                document.getElementById("select-all").indeterminate = false;
+                document.getElementById(selectAllId).indeterminate = false;
                 if (notChecked.length) {
                     setSelectAll(false);
                 } else {
@@ -48,12 +50,12 @@ export function useCheckboxes(checkBoxItems = [], showSelectAll = false, classNa
     }
 
     const checkBoxes = <>
-        {showSelectAll && <input type="checkbox" id="select-all" checked={selectAll} onChange={() => setSelectAll(!selectAll)}/>}
+        {showSelectAll && <input type="checkbox" id={selectAllId} checked={selectAll} onChange={() => setSelectAll(!selectAll)}/>}
         <div className={className}>
             {
-                Object.keys(checkBoxState).map((key) => <div key={key}>
-                    <label>{key}
-                        <input type="checkbox" checked={checkBoxState[key] || false} onChange={() => updateOption(key)} />
+                checkBoxState.map((item) => <div key={item.id || item.label}>
+                    <label>{item.label}
+                        <input type="checkbox" checked={item.isChecked || false} onChange={() => updateOption(item.label)} />
                     </label>
                 </div>)
             }
@@ -61,10 +63,15 @@ export function useCheckboxes(checkBoxItems = [], showSelectAll = false, classNa
     </>
 
     //checkboxState is returned so the calling component can use the checked boxes
-    //boxes is the jsx code returned
+    //checkBoxes is the jsx code returned
+    //the select all checkbox contains an indeterminate state. To check whether select all is in
+    //the tri-state, use document.getElementById(selectAllId).indeterminate (true if tri-state, false
+    //if checked on or off)
+    //to check whether it is checked, use document.getElementById(selectAllId).checked
 
     return {
         checkBoxes,
-        checkBoxState
+        checkBoxState,
+        selectAllId
     };
 }	
