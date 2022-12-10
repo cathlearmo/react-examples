@@ -33,7 +33,8 @@ export function useCheckboxes(checkBoxItems = [], showSelectAll = false, classNa
                 document.getElementById(selectAllId).indeterminate = true;
             } else {
                 document.getElementById(selectAllId).indeterminate = false;
-                setSelectAll(notChecked.length > 0);
+                const allChecked =  checked?.length === checkBoxItems.length;
+                setSelectAll(allChecked);
             }
         }
     }
