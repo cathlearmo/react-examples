@@ -19,17 +19,17 @@ export function useCheckboxes(checkBoxItems = [], showSelectAll = false, classNa
     }, [selectAll]);
 
     const updateOption = (selectedLabel) => {
-        let newState = [...checkBoxState];
-        newState.forEach((item) => {
-            if (item.label === selectedLabel) {
-                item.isChecked = !item.isChecked;
-            }
-        })
+        let newState = checkBoxState.map(item => ({
+            ...item,
+            isChecked: item.label === selectedLabel ? !item.isChecked : item.isChecked,
+        }));
+
         setCheckboxState(newState);
+
         if (showSelectAll) {
-            const notChecked = newState.filter((item) => item.isChecked === false);
-            const checked = newState.filter((item) => item.isChecked === true);
-            if (notChecked.length > 0 && checked.length > 0) {
+            const notChecked = newState.filter((item) => !item.isChecked);
+            const checked = newState.filter((item) => item.isChecked);
+            if (notChecked.length && checked.length) {
                 document.getElementById(selectAllId).indeterminate = true;
             } else {
                 document.getElementById(selectAllId).indeterminate = false;
