@@ -9,7 +9,7 @@ export function Product() {
         <>
             <h2> "Hubble Observes One-of-a-Kind Star Nicknamed ‘Nasty’"</h2>
             <div className="image">
-                <img src={source}/>
+                <img src={source} alt="star called Nasty"/>
             </div>
         </>
     );
