@@ -40,11 +40,7 @@ export function useCheckboxes(checkBoxItems = [], showSelectAll = false, classNa
                 document.getElementById(selectAllId).indeterminate = true;
             } else {
                 document.getElementById(selectAllId).indeterminate = false;
-                if (notChecked.length) {
-                    setSelectAll(false);
-                } else {
-                    setSelectAll(true);
-                }
+                setSelectAll(notChecked.length > 0);
             }
         }
     }
