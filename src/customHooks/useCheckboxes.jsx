@@ -8,15 +8,11 @@ import React from 'react';
 export function useCheckboxes(checkBoxItems = [], showSelectAll = false, className = "checkbox-group") {
 
     const [selectAll, setSelectAll] = React.useState(false);
-    const [checkBoxState, setCheckboxState] = React.useState([]);
+    const [checkBoxState, setCheckboxState] = React.useState(checkBoxItems);
     const selectAllId = React.useId();
 
     React.useEffect(() => {
-        setCheckboxState(checkBoxItems);
-    }, []);
-
-    React.useEffect(() => {
-        setCheckboxState(checkBoxState?.map(item => ({
+        setCheckboxState(c => c?.map(item => ({
             ...item,
             isChecked: selectAll,
         })));
