@@ -16,13 +16,10 @@ export function useCheckboxes(checkBoxItems = [], showSelectAll = false, classNa
     }, []);
 
     React.useEffect(() => {
-        if (checkBoxState.length) {
-            let newState = [...checkBoxState];
-            newState.forEach((item) => {
-                item.isChecked = selectAll;
-            });
-            setCheckboxState(newState);
-        }
+        setCheckboxState(checkBoxState?.map(item => ({
+            ...item,
+            isChecked: selectAll,
+        })));
     }, [selectAll]);
 
     const updateOption = (selectedLabel) => {
