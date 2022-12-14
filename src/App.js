@@ -11,6 +11,7 @@ import { ThemeContext } from './context/themeContext.jsx';
 import { SelectTheme } from './context/selectTheme.jsx';
 import { GridDemo } from './grid/gridDemo.jsx';
 import { TabDemo } from './tabsPage/tabDemo.jsx';
+import { ModalContainer } from './modal/modalContainer';
 import './App.scss';
 
 /*use React Router for client-side page navigation*/
@@ -61,6 +62,7 @@ function App() {
               <Route path="/tabs" element={<TabDemo />}/>
               {/*<Route path="/design" element={<DesignPage />}*/}
             </Routes>
+            <ModalContainer />
           </div>
         </div>
       </div>
